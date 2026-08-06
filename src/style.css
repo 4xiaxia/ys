@@ -1,0 +1,149 @@
+:root {
+  color: #1f1f1f;
+  background: #f5f7fb;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 甲方画布锚 */
+  --canvas-design-w: 1726;
+  --canvas-design-h: 980;
+  --canvas-aspect: 1.7612;
+
+  /*
+   * 页面基础参数（夏夏：格局尽量不要一直变动）
+   * 注意：这里的“侧栏”指页内右列（预览旁/配置旁），不是全站左侧导航
+   */
+  --page-max-width: 1080px;
+  --page-padding-x: 24px;
+  --page-padding-y: 16px;
+  --header-height: 56px;
+  --header-padding-x: 24px;
+  --card-radius: 8px;
+  --main-gap: 16px;
+  --board-preview-max: min(680px, 46vw);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  background: #f3f5f8;
+}
+
+button, input, textarea { font: inherit; }
+
+#app { min-height: 100vh; }
+
+.qh-page {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.qh-page-header.ant-layout-header,
+.qh-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  padding: 0 var(--header-padding-x);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e8edf5;
+}
+
+.qh-page-content {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--page-padding-y) var(--page-padding-x) 28px;
+}
+
+.qh-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.qh-brand-mark {
+  font-weight: 700;
+  color: #1677ff;
+}
+
+.qh-surface-card.ant-card {
+  border-radius: var(--card-radius);
+  border-color: #e8edf5;
+  box-shadow: 0 8px 24px rgba(31, 45, 61, 0.05);
+}
+
+.qh-surface-card.ant-card .ant-card-head {
+  min-height: 48px;
+  padding: 0 16px;
+}
+
+.qh-surface-card.ant-card .ant-card-body {
+  padding: 16px;
+}
+
+.qh-handoff-steps {
+  margin: 4px 0 20px;
+}
+
+.qh-handoff-stats {
+  margin-bottom: 16px;
+}
+
+.qh-handoff-stats .ant-statistic {
+  min-height: 72px;
+  padding: 10px 12px;
+  background: #f7f9fc;
+  border: 1px solid #edf1f6;
+  border-radius: 6px;
+}
+
+.qh-handoff-stats .ant-statistic-title {
+  margin-bottom: 4px;
+  color: #667085;
+}
+
+.qh-handoff-stats .ant-statistic-content {
+  color: #1f2937;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-max-width: 100%;
+    --board-preview-max: 100%;
+  }
+
+  .qh-page-header.ant-layout-header,
+  .qh-page-header {
+    height: auto;
+    min-height: var(--header-height);
+    padding: 8px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+    line-height: 1.4;
+  }
+
+  .qh-page-header .qh-brand {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .qh-page-header > .ant-space {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

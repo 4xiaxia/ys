@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Noto Sans SC", sans-serif;
+  --font-headline: "Noto Sans SC", sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 全局滚动条：细条 + 透明轨道 */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,.10); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,.20); }
+* { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.10) transparent; }
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
